@@ -3,10 +3,10 @@ const mainSection = document.querySelector('.s-main');
 
 const allTeams = async () => {
     const apiResponse = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/teams?key=7ac88cd61be744f68e4568b46cfecdf6`)
-    .then(apiResponse => apiResponse.json());
-    if (apiResponse != undefined){
+    const response = await apiResponse.json()
+    if (response != undefined){
         mainSection.innerHTML = '';
-        apiResponse.forEach(equip => {
+        response.forEach(equip => {
             const team = document.createElement('div');
             const teamLogo = document.createElement('img');
             const teamName = document.createElement('span');
@@ -28,8 +28,8 @@ const allTeams = async () => {
 
 const allPlayers = async (team, teamLogo, teamName) => {
     const teamResponse = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/Players/${team}?key=7ac88cd61be744f68e4568b46cfecdf6`)
-        .then(teamResponse => teamResponse.json())
-    if (teamResponse !== undefined) {
+    const response2 = await teamResponse.json();
+    if (response2 !== undefined) {
         mainSection.innerHTML = '';
         const currentTeam = document.createElement('div');
         currentTeam.classList.add('currentTeam', 'card');
@@ -46,7 +46,7 @@ const allPlayers = async (team, teamLogo, teamName) => {
         const players = document.createElement('ul');
         players.classList.add('players');
         currentTeam.appendChild(teamInfo);
-        teamResponse.forEach(player => {
+        response2.forEach(player => {
             const playerList = document.createElement('li');
             playerList.classList.add('player');
             const playerInfo = document.createElement('div');
