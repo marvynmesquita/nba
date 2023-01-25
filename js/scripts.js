@@ -2,7 +2,7 @@ const mainSection = document.querySelector('.s-main');
 
 
 const allTeams = async () => {
-    const apiResponse = await fetch(`https//:api.sportsdata.io/v3/nba/scores/json/teams?key=7ac88cd61be744f68e4568b46cfecdf6`)
+    const apiResponse = await fetch(`https://api.sportsdata.io/v3/nba/scores/json/teams?key=7ac88cd61be744f68e4568b46cfecdf6`)
     .then(apiResponse => apiResponse.json());
     if (apiResponse != undefined){
         mainSection.innerHTML = '';
