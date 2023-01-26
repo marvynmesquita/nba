@@ -11,6 +11,13 @@ header {
     position: fixed;
     z-index: 99999;
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    .back-btn {
+        height: 80%;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 10%;
+    }
     a {
         height: 80%;
         img {
@@ -59,8 +66,8 @@ header {
             text-align: center;
             margin: 5%;
         }
-        
     }
+
     .team:hover {
         box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
         .name {
@@ -87,6 +94,14 @@ header {
                 font-weight: 600;
                 font-size: 3rem;
                 margin: 1rem;
+            }
+            .season {
+                font-weight: 500;
+                font-size: 2rem;
+                margin: 1rem;
+            }
+            .graph {
+                width: 100%;
             }
             @media(max-width: 900px){
                 width: 90%;
@@ -142,16 +157,13 @@ header {
             align-items: center;
         }
     }
-    @media(max-width: 1300px){
-        grid-template-columns: repeat(4,0.1fr);
-    }
-    @media(max-width: 900px){
+    @media(max-width: 1200px){
         grid-template-columns: repeat(3, 0.1fr);
     }
-    @media(max-width: 600px){
+    @media(max-width: 950px){
         grid-template-columns: repeat(2, 0.1fr);
     }
-    @media(max-width: 400px){
+    @media(max-width: 500px){
         grid-template-columns: repeat(1, 0.1fr);
     }
 }
